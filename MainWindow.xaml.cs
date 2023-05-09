@@ -21,7 +21,7 @@ namespace WpfApp4
     /// </summary>
     public partial class MainWindow : Window
     {
-        private static readonly Dictionary<Gridevalue, ImageSource> dictionary = new Dictionary<Gridevalue, ImageSource>()
+        private static readonly Dictionary<Gridevalue, ImageSource> gridValToImage = new Dictionary<Gridevalue, ImageSource>()
         {
             { Gridevalue.Empty, images.Empty },
             { Gridevalue.Snake, images.Body },
@@ -138,7 +138,7 @@ namespace WpfApp4
                 for (int c = 0; c < cols; c++)
                 {
                     Gridevalue gridval = gamestate.Grid[r, c];
-                    gridImages[r, c].Source = gridvalToImage[gridval];
+                    gridImages[r, c].Source = gridValToImage[gridval];
                     gridImages[r, c].RenderTransform = Transform.Identity;
                 }
             }
